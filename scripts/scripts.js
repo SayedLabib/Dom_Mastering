@@ -45,10 +45,32 @@ for(const btn of allBtn)
 
 // Update GrandTotal Cost
 
-function updateGrandTotalCost()
+function updateGrandTotalCost(applied)
 {
-   const totalCost = getConvertedValue('Total-cost');
-   document.getElementById('grand-total').innerText = totalCost;
+   
+    const totalCost = getConvertedValue('Total-cost');
+
+    if(applied)
+    {
+        const couponCode = document.getElementById('coupon-code').value;
+        
+        if(couponCode === 'New20')
+            {
+              const discountedPrice = totalCost * .2;
+              
+              document.getElementById('grand-total').innerText = totalCost - discountedPrice;
+                  
+            }
+         else
+         {
+            alert('Please enter a valid coupon code');
+         }
+    }
+    else{
+    
+     document.getElementById('grand-total').innerText = totalCost;
+    }
+       
 }
 
 
