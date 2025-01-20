@@ -11,9 +11,6 @@ for(const btn of allBtn)
                 
            const selectedPlayer = document.getElementById('selected-player-container');     
                 
-           event.target.setAttribute('disabled', false);
-           event.target.parentNode.parentNode.style.backgroundColor = "#e6641e";
-
 
            const div = document.createElement('div');
            div.classList.add('flex');
@@ -37,10 +34,25 @@ for(const btn of allBtn)
            div.appendChild(p3);
             
            selectedPlayer.appendChild(div);
+
+
+                   //  Update CartCount
+           
+                   const cartCount = getConvertedValue('Cart-Count');
+
+                   if(cartCount+1>6)
+                      {
+                        alert('You have reached your limit');
+                        return;
+                      }
+        
+                   event.target.setAttribute('disabled', false);
+                   event.target.parentNode.parentNode.style.backgroundColor = "#e6641e";
+                   document.getElementById('Cart-Count').innerText = cartCount + 1;
            
            updateTotalCost(price);
            updateBudget(price);
-           updateCartCount();
+        //    updateCartCount();
            updateGrandTotalCost();
            updateLeftCount();
            
@@ -114,20 +126,22 @@ function updateBudget(update)
 
 // Cart Count Update
 
-function updateCartCount()
-{
+// function updateCartCount()
+// {
     
-    const cartCount = getConvertedValue('Cart-Count');
+//     const cartCount = getConvertedValue('Cart-Count');
 
-     if(cartCount+1>6)
-        {
-          alert('You have reached limit');
-          return;
-        }
+//      if(cartCount+1>6)
+//         {
+//           alert('You have reached your limit');
+//           return;
+//         }
 
-    const updateCartCount = document.getElementById('Cart-Count').innerText = cartCount + 1;
-    return updateCartCount;
-}
+//     const updateCartCount = document.getElementById('Cart-Count').innerText = cartCount + 1;
+      
+
+//     return updateCartCount;
+// }
 
 function updateLeftCount()
 {
