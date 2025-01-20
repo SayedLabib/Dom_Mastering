@@ -11,6 +11,10 @@ for(const btn of allBtn)
                 
            const selectedPlayer = document.getElementById('selected-player-container');     
                 
+           event.target.setAttribute('disabled', false);
+           event.target.parentNode.parentNode.style.backgroundColor = "#e6641e";
+
+
            const div = document.createElement('div');
            div.classList.add('flex');
            div.classList.add('flex-row');
@@ -35,8 +39,11 @@ for(const btn of allBtn)
            selectedPlayer.appendChild(div);
            
            updateTotalCost(price);
+           updateBudget(price);
+           updateCartCount();
            updateGrandTotalCost();
-
+           updateLeftCount();
+           
           });
 
  
@@ -86,9 +93,6 @@ function updateTotalCost(value)
 }
 
 
-
-
-
 // Converted to parseInt function created
 function getConvertedValue(elementId)
 {
@@ -97,6 +101,46 @@ function getConvertedValue(elementId)
     const convertedValue = parseInt(getValue);
     return convertedValue;
     
+}
+
+// Budget Update
+function updateBudget(update)
+{
+    const budget = getConvertedValue('Budget');
+    
+    document.getElementById('Budget').innerText = budget - parseInt(update);  
+    
+}
+
+// Cart Count Update
+
+function updateCartCount()
+{
+    
+    const cartCount = getConvertedValue('Cart-Count');
+
+     if(cartCount+1>6)
+        {
+          alert('You have reached limit');
+          return;
+        }
+
+    const updateCartCount = document.getElementById('Cart-Count').innerText = cartCount + 1;
+    return updateCartCount;
+}
+
+function updateLeftCount()
+{
+
+    const left = getConvertedValue('Left');
+     
+    if(left-1<0)
+        {
+         return;
+        }
+
+    const updateLeftCount = document.getElementById('Left').innerText = left - 1;
+    return updateLeftCount;
 }
 
 
