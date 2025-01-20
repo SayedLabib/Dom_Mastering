@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM mastering</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+</head>
+
+<body>
+   
+  <nav class="container mx-auto mt-5">
+    <div class="flex flex-row text-xl justify-around font-extrabold">
+      <h1>Budget: <span class="price-color" id="Budget">2500</span> $</h1>
+      <h1>Cart: <span class="price-color"> 0</span></h1>
+      <h1>Left: <span class="price-color"> 6</span></h1>
+   </div>
+  </nav>
+
+
+   <main class=" mt-20 container mx-auto flex flex-row justify-around">
+     
+    <!-- Player Container -->
+
+  <div class="player-container flex flex-col justify-arround gap-5">
+    
+    <!-- first row -->
+  <div class="flex flex-row justify-around gap-5">
+       
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Tamim Iqbal</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>batsman</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Shanto</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>batsman</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+
+  
+
+
+
+  </div>
+   
+   <!-- 2nd row -->
+  <div class="flex flex-row justify-around gap-5">
+       
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Liton</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>keeper</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Shakib</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>All rounder</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+
+  
+
+
+
+  </div>
+
+   <!-- 3rd row -->
+  <div class="flex flex-row justify-around gap-5">
+       
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Taskin</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>fast bowler</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Mustafiz</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>fast bowler</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+
+  
+
+
+
+  </div>
+
+  <!-- 4th row -->
+  <div class="flex flex-row justify-around gap-5">
+       
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Jaker Ali</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>Finisher</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bg-base-100 w-96 shadow-xl">
+      <div class="card-body text-center">
+        <h2 class="card-title justify-center">Sunny</h2>
+        <p>Price: <span>300</span> $</p>
+        <p>Category: <span>Spinner</span></p>
+        <div class="card-actions justify-center">
+          <button class="btn btn-primary">Add To cart</button>
+        </div>
+      </div>
+    </div>
+
+
+  
+
+
+
+  </div>
+
+
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- cart container -->
+
+  <div class="cart-container text-black">
+       
+    <div class="card bg-[white] text-neutral-content w-[500px] h-auto border">
+      <div class="card-body items-center text-center text-black">
+        <h2 class="mb-2 card-title justify-center text-black">My Cart</h2>
+        <img src="images/Line 1.png" alt="">
+
+        <div class="mt-2 mb-2 font-bold text-xl flex flex-row justify-around  gap-20">
+         
+          <p>Name</p>
+          <p>Price</p>
+          <p>Category</p>
+        </div>
+        <img src="images/Line 1.png" alt="">
+
+        <div class="mb-2 mt-2  " id="selected-player-container"></div>
+
+        <img src="images/Line 1.png" alt="">
+        
+        <h1 class=" mb-2 text-center text-bold text-xl">Total Cost: <span id="Total-cost">0 </span>$</h1>
+        <img src="images/Line 1.png" alt="">
+
+        <div class="mt-5 mb-2 coupon-code flex flex-row justify-around gap-5">
+          <input class="border" id="coupon-code" type="text" placeholder="coupon code">
+          <button class="btn">Apply</button>
+        </div>
+
+        <img src="images/Line 1.png" alt="">
+
+        <h1 class="text-center">Grand Total: <span id="grand-total">0 </span>$</h1>
+
+      </div>
+
+
+    
+    </div>
+
+  </div>
+ 
+   </main>
+
+  <footer class="mt-20">
+
+  </footer>
+
+ 
+  <script src="scripts/scripts.js"></script>
+
+</body>
+</html>
